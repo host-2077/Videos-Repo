@@ -1,2 +1,2 @@
 # VideosRepo
-Code files that I use in my YouTube videos. Check it here: [[+]](https://youtube.com/@host.2077)
+Code files that I use for YouTube videos. Check them here: [[+]](https://youtube.com/@host.2077)
