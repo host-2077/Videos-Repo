@@ -4,6 +4,77 @@ void main() {
   runApp(const MyApp());
 }
 
+class Cards {
+  String category;
+  String question;
+
+  Cards({required this.category, required this.question});
+}
+
+final card1 = Cards(
+  category: "Sports",
+  question: "¿What is one of the newest Olympic sports that exist?",
+);
+final card2 = Cards(
+  category: "Comics",
+  question: "¿Who is a latinamerican DC villain?",
+);
+
+final card3 = Cards(
+  category: "Tech",
+  question: "¿What is the best programming langauge to create apps?",
+);
+
+final card4 = Cards(
+  category: "Sports",
+  question: "What do you call it when a bowler makes three strikes in a row?",
+);
+final card5 = Cards(
+  category: "Comics",
+  question: "Who is the fastest DC character?",
+);
+final card6 = Cards(
+  category: "Tech",
+  question: "One gigabyte is equal to how many megabytes?",
+);
+final card7 = Cards(
+  category: "Sports",
+  question: "Which boxer fought against Muhammad Ali and won?",
+);
+final card8 = Cards(
+  category: "Comics",
+  question: "Who is the tyrannical ruler of the planet Apokolips?",
+);
+final card9 = Cards(
+  category: "Tech",
+  question: "What does CPU stand for?",
+);
+final card10 = Cards(
+  category: "Sports",
+  question:
+      "In motor racing, what color is the flag they wave to indicate the winner?",
+);
+final card11 = Cards(
+  category: "Comics",
+  question: "How did Deathstroke get his powers?",
+);
+final card12 = Cards(
+  category: "Tech",
+  question: "What does “HTTP” stand for?",
+);
+final card13 = Cards(
+  category: "Sports",
+  question: "How many holes are played in an average round of golf?",
+);
+final card14 = Cards(
+  category: "Comics",
+  question: "Dick Grayson was first known as Robin and later as...?",
+);
+final card15 = Cards(
+  category: "Tech",
+  question: "What is a Fat Arrow Notation in Dart?",
+);
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -23,69 +94,6 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final carta1 = CartaDePreguntas(
-      categoria: "Sports",
-      pregunta: "What is one of the newest Olympic sports that exist?",
-    );
-    final carta2 = CartaDePreguntas(
-      categoria: "Comics",
-      pregunta: "What's the name of a latinamerican DC villain?",
-    );
-    final carta3 = CartaDePreguntas(
-      categoria: "Tech",
-      pregunta: "What is the best programming langauge to create apps?",
-    );
-    final carta4 = CartaDePreguntas(
-      categoria: "Sports",
-      pregunta:
-          "What do you call it when a bowler makes three strikes in a row?",
-    );
-    final carta5 = CartaDePreguntas(
-      categoria: "Comics",
-      pregunta: "Who is the fastest DC character?",
-    );
-    final carta6 = CartaDePreguntas(
-      categoria: "Tech",
-      pregunta: "One gigabyte is equal to how many megabytes?",
-    );
-    final carta7 = CartaDePreguntas(
-      categoria: "Sports",
-      pregunta: "Which boxer fought against Muhammad Ali and won?",
-    );
-    final carta8 = CartaDePreguntas(
-      categoria: "Comics",
-      pregunta: "Who is the tyrannical ruler of the planet Apokolips?",
-    );
-    final carta9 = CartaDePreguntas(
-      categoria: "Tech",
-      pregunta: "What does CPU stand for?",
-    );
-    final carta10 = CartaDePreguntas(
-      categoria: "Sports",
-      pregunta:
-          "In motor racing, what color is the flag they wave to indicate the winner?",
-    );
-    final carta11 = CartaDePreguntas(
-      categoria: "Comics",
-      pregunta: "How did Deathstroke get his powers?",
-    );
-    final carta12 = CartaDePreguntas(
-      categoria: "Tech",
-      pregunta: "What does “HTTP” stand for?",
-    );
-    final carta13 = CartaDePreguntas(
-      categoria: "Sports",
-      pregunta: "How many holes are played in an average round of golf?",
-    );
-    final carta14 = CartaDePreguntas(
-      categoria: "Comics",
-      pregunta: "Dick Grayson was first known as Robin and later as...?",
-    );
-    final carta15 = CartaDePreguntas(
-      categoria: "Tech",
-      pregunta: "What is a Fat Arrow Notation in Dart?",
-    );
-
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       appBar: AppBar(
@@ -133,11 +141,11 @@ class Home extends StatelessWidget {
                   child: Column(
                     children: [
                       Text(
-                        carta1.categoria,
+                        card1.category,
                         textAlign: TextAlign.center,
                       ),
                       Text(
-                        carta1.pregunta,
+                        card1.question,
                         textAlign: TextAlign.center,
                       ),
                     ],
@@ -161,11 +169,11 @@ class Home extends StatelessWidget {
                   child: Column(
                     children: [
                       Text(
-                        carta2.categoria,
+                        card2.category,
                         textAlign: TextAlign.center,
                       ),
                       Text(
-                        carta2.pregunta,
+                        card2.question,
                         textAlign: TextAlign.center,
                       ),
                     ],
@@ -189,11 +197,11 @@ class Home extends StatelessWidget {
                   child: Column(
                     children: [
                       Text(
-                        carta3.categoria,
+                        card3.category,
                         textAlign: TextAlign.center,
                       ),
                       Text(
-                        carta3.pregunta,
+                        card3.question,
                         textAlign: TextAlign.center,
                       ),
                       const SizedBox(),
@@ -218,11 +226,11 @@ class Home extends StatelessWidget {
                   child: Column(
                     children: [
                       Text(
-                        carta4.categoria,
+                        card4.category,
                         textAlign: TextAlign.center,
                       ),
                       Text(
-                        carta4.pregunta,
+                        card4.question,
                         textAlign: TextAlign.center,
                       ),
                       const SizedBox(),
@@ -247,11 +255,11 @@ class Home extends StatelessWidget {
                   child: Column(
                     children: [
                       Text(
-                        carta5.categoria,
+                        card5.category,
                         textAlign: TextAlign.center,
                       ),
                       Text(
-                        carta5.pregunta,
+                        card5.question,
                         textAlign: TextAlign.center,
                       ),
                       const SizedBox(),
@@ -276,11 +284,11 @@ class Home extends StatelessWidget {
                   child: Column(
                     children: [
                       Text(
-                        carta6.categoria,
+                        card6.category,
                         textAlign: TextAlign.center,
                       ),
                       Text(
-                        carta6.pregunta,
+                        card6.question,
                         textAlign: TextAlign.center,
                       ),
                       const SizedBox(),
@@ -305,11 +313,11 @@ class Home extends StatelessWidget {
                   child: Column(
                     children: [
                       Text(
-                        carta7.categoria,
+                        card7.category,
                         textAlign: TextAlign.center,
                       ),
                       Text(
-                        carta7.pregunta,
+                        card7.question,
                         textAlign: TextAlign.center,
                       ),
                       const SizedBox(),
@@ -334,11 +342,11 @@ class Home extends StatelessWidget {
                   child: Column(
                     children: [
                       Text(
-                        carta8.categoria,
+                        card8.category,
                         textAlign: TextAlign.center,
                       ),
                       Text(
-                        carta8.pregunta,
+                        card8.question,
                         textAlign: TextAlign.center,
                       ),
                       const SizedBox(),
@@ -363,11 +371,11 @@ class Home extends StatelessWidget {
                   child: Column(
                     children: [
                       Text(
-                        carta9.categoria,
+                        card9.category,
                         textAlign: TextAlign.center,
                       ),
                       Text(
-                        carta9.pregunta,
+                        card9.question,
                         textAlign: TextAlign.center,
                       ),
                       const SizedBox(),
@@ -392,11 +400,11 @@ class Home extends StatelessWidget {
                   child: Column(
                     children: [
                       Text(
-                        carta10.categoria,
+                        card10.category,
                         textAlign: TextAlign.center,
                       ),
                       Text(
-                        carta10.pregunta,
+                        card10.question,
                         textAlign: TextAlign.center,
                       ),
                       const SizedBox(),
@@ -421,11 +429,11 @@ class Home extends StatelessWidget {
                   child: Column(
                     children: [
                       Text(
-                        carta11.categoria,
+                        card11.category,
                         textAlign: TextAlign.center,
                       ),
                       Text(
-                        carta11.pregunta,
+                        card11.question,
                         textAlign: TextAlign.center,
                       ),
                       const SizedBox(),
@@ -450,11 +458,11 @@ class Home extends StatelessWidget {
                   child: Column(
                     children: [
                       Text(
-                        carta12.categoria,
+                        card12.category,
                         textAlign: TextAlign.center,
                       ),
                       Text(
-                        carta12.pregunta,
+                        card12.question,
                         textAlign: TextAlign.center,
                       ),
                       const SizedBox(),
@@ -479,11 +487,11 @@ class Home extends StatelessWidget {
                   child: Column(
                     children: [
                       Text(
-                        carta13.categoria,
+                        card13.category,
                         textAlign: TextAlign.center,
                       ),
                       Text(
-                        carta13.pregunta,
+                        card13.question,
                         textAlign: TextAlign.center,
                       ),
                       const SizedBox(),
@@ -508,11 +516,11 @@ class Home extends StatelessWidget {
                   child: Column(
                     children: [
                       Text(
-                        carta14.categoria,
+                        card14.category,
                         textAlign: TextAlign.center,
                       ),
                       Text(
-                        carta14.pregunta,
+                        card14.question,
                         textAlign: TextAlign.center,
                       ),
                       const SizedBox(),
@@ -537,11 +545,11 @@ class Home extends StatelessWidget {
                   child: Column(
                     children: [
                       Text(
-                        carta15.categoria,
+                        card15.category,
                         textAlign: TextAlign.center,
                       ),
                       Text(
-                        carta15.pregunta,
+                        card15.question,
                         textAlign: TextAlign.center,
                       ),
                       const SizedBox(),
@@ -566,11 +574,4 @@ class Home extends StatelessWidget {
       ),
     );
   }
-}
-
-class CartaDePreguntas {
-  String categoria;
-  String pregunta;
-
-  CartaDePreguntas({required this.categoria, required this.pregunta});
 }
