@@ -4,6 +4,115 @@ void main() {
   runApp(const MyApp());
 }
 
+class Cards {
+  String category;
+  String question;
+  String answer;
+
+  Cards({
+    required this.category,
+    required this.question,
+    required this.answer,
+  });
+}
+
+final card1 = Cards(
+  category: "Sports",
+  question: "¿What is one of the newest Olympic sports that exist?",
+  answer: "Skateboarding",
+);
+final card2 = Cards(
+  category: "Comics",
+  question: "What's the name of a latinamerican DC villain?",
+  answer: "Diablo",
+);
+
+final card3 = Cards(
+  category: "Tech",
+  question: "¿What is the best programming langauge to create apps?",
+  answer: "Flutter",
+);
+
+final card4 = Cards(
+  category: "Sports",
+  question: "What do you call it when a bowler makes three strikes in a row?",
+  answer: "Turkey",
+);
+final card5 = Cards(
+  category: "Comics",
+  question: "Who is the fastest DC character?",
+  answer: "The Flash",
+);
+final card6 = Cards(
+  category: "Tech",
+  question: "One gigabyte is equal to how many megabytes?",
+  answer: "1000",
+);
+final card7 = Cards(
+  category: "Sports",
+  question: "Which boxer fought against Muhammad Ali and won?",
+  answer: "Joe Frazier",
+);
+final card8 = Cards(
+  category: "Comics",
+  question: "Who is the tyrannical ruler of the planet Apokolips?",
+  answer: "Darkseid",
+);
+final card9 = Cards(
+  category: "Tech",
+  question: "What does CPU stand for?",
+  answer: "Central Processing Unit",
+);
+final card10 = Cards(
+  category: "Sports",
+  question:
+      "In motor racing, what color is the flag they wave to indicate the winner?",
+  answer: "Checkered flag",
+);
+final card11 = Cards(
+  category: "Comics",
+  question: "How did Deathstroke get his powers?",
+  answer: "A military experiment",
+);
+final card12 = Cards(
+  category: "Tech",
+  question: "What does “HTTP” stand for?",
+  answer: "Hypertext Transfer Protocol",
+);
+final card13 = Cards(
+  category: "Sports",
+  question: "How many holes are played in an average round of golf?",
+  answer: "18",
+);
+final card14 = Cards(
+  category: "Comics",
+  question: "Dick Grayson was first known as Robin and later as?",
+  answer: "Nightwing",
+);
+final card15 = Cards(
+  category: "Tech",
+  question: "What is a Fat Arrow Notation in Dart?",
+  answer: "=>",
+);
+
+final cards = [
+  card1,
+  card2,
+  card3,
+  card4,
+  card5,
+  card6,
+  card7,
+  card8,
+  card9,
+  card10,
+  card11,
+  card12,
+  card13,
+  card14,
+  card15,
+];
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -23,105 +132,8 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final carta1 = CartaDePreguntas(
-      categoria: "Sports",
-      pregunta: "What is one of the newest Olympic sports that exist?",
-      respuesta: "Skateboarding",
-    );
-    final carta2 = CartaDePreguntas(
-      categoria: "Comics",
-      pregunta: "What's the name of a latinamerican DC villain?",
-      respuesta: "Diablo",
-    );
-    final carta3 = CartaDePreguntas(
-      categoria: "Tech",
-      pregunta: "What is the best programming langauge to create apps?",
-      respuesta: "Flutter",
-    );
-    final carta4 = CartaDePreguntas(
-      categoria: "Sports",
-      pregunta:
-          "What do you call it when a bowler makes three strikes in a row?",
-      respuesta: "Turkey",
-    );
-    final carta5 = CartaDePreguntas(
-      categoria: "Comics",
-      pregunta: "Who is the fastest DC character?",
-      respuesta: "The Flash",
-    );
-    final carta6 = CartaDePreguntas(
-      categoria: "Tech",
-      pregunta: "One gigabyte is equal to how many megabytes?",
-      respuesta: "1000",
-    );
-    final carta7 = CartaDePreguntas(
-      categoria: "Sports",
-      pregunta: "Which boxer fought against Muhammad Ali and won?",
-      respuesta: "Joe Frazier",
-    );
-    final carta8 = CartaDePreguntas(
-      categoria: "Comics",
-      pregunta: "Who is the tyrannical ruler of the planet Apokolips?",
-      respuesta: "Darkseid",
-    );
-    final carta9 = CartaDePreguntas(
-      categoria: "Tech",
-      pregunta: "What does CPU stand for?",
-      respuesta: "Central Processing Unit",
-    );
-    final carta10 = CartaDePreguntas(
-      categoria: "Sports",
-      pregunta:
-          "In motor racing, what color is the flag they wave to indicate the winner?",
-      respuesta: "Checkered flag",
-    );
-    final carta11 = CartaDePreguntas(
-      categoria: "Comics",
-      pregunta: "How did Deathstroke get his powers?",
-      respuesta: "A military experiment",
-    );
-    final carta12 = CartaDePreguntas(
-      categoria: "Tech",
-      pregunta: "What does “HTTP” stand for?",
-      respuesta: "Hypertext Transfer Protocol",
-    );
-    final carta13 = CartaDePreguntas(
-      categoria: "Sports",
-      pregunta: "How many holes are played in an average round of golf?",
-      respuesta: "18",
-    );
-    final carta14 = CartaDePreguntas(
-      categoria: "Comics",
-      pregunta: "Dick Grayson was first known as Robin and later as...?",
-      respuesta: "Nightwing",
-    );
-    final carta15 = CartaDePreguntas(
-      categoria: "Tech",
-      pregunta: "What is a Fat Arrow Notation in Dart?",
-      respuesta: "=>",
-    );
-
     final screenSize = MediaQuery.of(context).size;
     final isSmallScreen = screenSize.width < 1000;
-
-    final cards = [
-      carta1,
-      carta2,
-      carta3,
-      carta4,
-      carta5,
-      carta6,
-      carta7,
-      carta8,
-      carta9,
-      carta10,
-      carta11,
-      carta12,
-      carta13,
-      carta14,
-      carta15,
-    ];
-
     final cardWidth = isSmallScreen ? null : screenSize.width / 3;
 
     final cardList = cards.map((card) {
@@ -129,7 +141,7 @@ class Home extends StatelessWidget {
         onTap: () {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text(card.respuesta),
+              content: Text(card.answer),
             ),
           );
         },
@@ -141,11 +153,11 @@ class Home extends StatelessWidget {
           child: Column(
             children: [
               Text(
-                card.categoria,
+                card.category,
                 textAlign: TextAlign.center,
               ),
               Text(
-                card.pregunta,
+                card.question,
                 textAlign: TextAlign.center,
               ),
             ],
@@ -172,7 +184,6 @@ class Home extends StatelessWidget {
       ),
       body: Center(
         child: SingleChildScrollView(
-          physics: const BouncingScrollPhysics(),
           child: Column(
             children: [
               const SizedBox(
@@ -205,16 +216,4 @@ class Home extends StatelessWidget {
       ),
     );
   }
-}
-
-class CartaDePreguntas {
-  String categoria;
-  String pregunta;
-  String respuesta;
-
-  CartaDePreguntas({
-    required this.categoria,
-    required this.pregunta,
-    required this.respuesta,
-  });
 }
