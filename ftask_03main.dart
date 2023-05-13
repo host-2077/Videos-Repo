@@ -4,6 +4,27 @@ void main() {
   runApp(const MyApp());
 }
 
+class Cards {
+  String category;
+  String question;
+
+  Cards({required this.category, required this.question});
+}
+
+final carta1 = Cards(
+  category: "Sports",
+  question: "¿What is one of the newest Olympic sports that exist?",
+);
+final carta2 = Cards(
+  category: "Comics",
+  question: "¿Who is a latinamerican DC villain?",
+);
+
+final carta3 = Cards(
+  category: "Tech",
+  question: "¿What is the best programming langauge to create apps?",
+);
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -23,20 +44,6 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final carta1 = CartaDePreguntas(
-      categoria: "Sports",
-      pregunta: "¿What is one of the newest Olympic sports that exist?",
-    );
-    final carta2 = CartaDePreguntas(
-      categoria: "Comics",
-      pregunta: "¿Who is a latinamerican DC villain?",
-    );
-
-    final carta3 = CartaDePreguntas(
-      categoria: "Tech",
-      pregunta: "¿What is the best programming langauge to create apps?",
-    );
-
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       appBar: AppBar(
@@ -62,11 +69,11 @@ class Home extends StatelessWidget {
                 child: Column(
                   children: [
                     Text(
-                      carta1.categoria,
+                      carta1.category,
                       textAlign: TextAlign.center,
                     ),
                     Text(
-                      carta1.pregunta,
+                      carta1.question,
                       textAlign: TextAlign.center,
                     ),
                     Stack(
@@ -75,7 +82,7 @@ class Home extends StatelessWidget {
                           width: 100,
                           height: 100,
                           child: Image.asset(
-                            "assets/001.jpg",
+                            "images/001.jpg",
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -104,18 +111,18 @@ class Home extends StatelessWidget {
                 child: Column(
                   children: [
                     Text(
-                      carta2.categoria,
+                      carta2.category,
                       textAlign: TextAlign.center,
                     ),
                     Text(
-                      carta2.pregunta,
+                      carta2.question,
                       textAlign: TextAlign.center,
                     ),
                     SizedBox(
                       width: 100,
                       height: 100,
                       child: Image.asset(
-                        "assets/002.jpg",
+                        "images/002.jpg",
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -138,11 +145,11 @@ class Home extends StatelessWidget {
                 child: Column(
                   children: [
                     Text(
-                      carta3.categoria,
+                      carta3.category,
                       textAlign: TextAlign.center,
                     ),
                     Text(
-                      carta3.pregunta,
+                      carta3.question,
                       textAlign: TextAlign.center,
                     ),
                     const SizedBox(
@@ -163,11 +170,4 @@ class Home extends StatelessWidget {
       ),
     );
   }
-}
-
-class CartaDePreguntas {
-  String categoria;
-  String pregunta;
-
-  CartaDePreguntas({required this.categoria, required this.pregunta});
 }
