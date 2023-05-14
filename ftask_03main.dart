@@ -87,7 +87,15 @@ class Home extends StatelessWidget {
                         Text(
                           card.question,
                           textAlign: TextAlign.center,
-                        )
+                        ),
+                        const SizedBox(
+                          width: 100,
+                          height: 100,
+                          child: CircleAvatar(
+                            backgroundImage: NetworkImage(
+                                "https://storage.googleapis.com/cms-storage-bucket/acb0587990b4e7890b95.png"),
+                          ),
+                        ),
                       ],
                     ),
                   ),
