@@ -1,32 +1,38 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
 class Cards {
   String category;
   String question;
+  String answer;
 
-  Cards({required this.category, required this.question});
+  Cards({required this.category, required this.question, required this.answer});
 }
 
-final carta1 = Cards(
-  category: "Sports",
-  question: "¿What is one of the newest Olympic sports that exist?",
-);
-final carta2 = Cards(
-  category: "Comics",
-  question: "¿Who is a latinamerican DC villain?",
-);
-
-final carta3 = Cards(
-  category: "Tech",
-  question: "¿What is the best programming langauge to create apps?",
-);
+void main() {
+  var questions = [
+    Cards(
+        category: "Sports",
+        question: "¿What is one of the newest Olympic sports that exist?",
+        answer: "test"),
+    Cards(
+        category: "Comics",
+        question: "¿Who is a latinamerican DC villain?",
+        answer: "test"),
+    Cards(
+        category: "Tech",
+        question: "¿What is the best programming langauge to create apps?",
+        answer: "test"),
+  ];
+  runApp(MyApp(questions: questions));
+}
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({
+    super.key,
+    required this.questions,
+  });
+
+  final List<Cards> questions;
 
   @override
   Widget build(BuildContext context) {
@@ -34,13 +40,15 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         appBarTheme: const AppBarTheme(backgroundColor: Colors.black),
       ),
-      home: const Home(),
+      home: Home(questions: questions),
     );
   }
 }
 
 class Home extends StatelessWidget {
-  const Home({super.key});
+  const Home({Key? key, required this.questions}) : super(key: key);
+
+  final List<Cards> questions;
 
   @override
   Widget build(BuildContext context) {
@@ -49,124 +57,45 @@ class Home extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Trivia Maker 1.0"),
       ),
-      body: Center(
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 45,
-            ),
-            GestureDetector(
-              onTap: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text("Skateboarding"),
-                  ),
-                );
-              },
-              child: Container(
-                width: 300,
-                color: Colors.tealAccent,
-                child: Column(
-                  children: [
-                    Text(
-                      carta1.category,
-                      textAlign: TextAlign.center,
-                    ),
-                    Text(
-                      carta1.question,
-                      textAlign: TextAlign.center,
-                    ),
-                    Stack(
+      body: ListView.builder(
+        itemCount: questions.length,
+        itemBuilder: (BuildContext context, int index) {
+          final card = questions[index];
+          return Center(
+            child: Column(
+              children: [
+                const SizedBox(
+                  height: 45,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(card.answer),
+                      ),
+                    );
+                  },
+                  child: Container(
+                    width: 300,
+                    color: Colors.tealAccent,
+                    child: Column(
                       children: [
-                        SizedBox(
-                          width: 100,
-                          height: 100,
-                          child: Image.asset(
-                            "images/001.jpg",
-                            fit: BoxFit.cover,
-                          ),
+                        Text(
+                          card.category,
+                          textAlign: TextAlign.center,
                         ),
-                        const Positioned(
-                          top: 80,
-                          child: Text("Stack Label 1"),
-                        ),
+                        Text(
+                          card.question,
+                          textAlign: TextAlign.center,
+                        )
                       ],
-                    )
-                  ],
-                ),
-              ),
-            ),
-            const Spacer(),
-            GestureDetector(
-              onTap: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text("Diablo"),
+                    ),
                   ),
-                );
-              },
-              child: Container(
-                width: 300,
-                color: Colors.tealAccent,
-                child: Column(
-                  children: [
-                    Text(
-                      carta2.category,
-                      textAlign: TextAlign.center,
-                    ),
-                    Text(
-                      carta2.question,
-                      textAlign: TextAlign.center,
-                    ),
-                    SizedBox(
-                      width: 100,
-                      height: 100,
-                      child: Image.asset(
-                        "images/002.jpg",
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ],
                 ),
-              ),
+              ],
             ),
-            const Spacer(),
-            GestureDetector(
-              onTap: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text("Flutter"),
-                  ),
-                );
-              },
-              child: Container(
-                width: 300,
-                color: Colors.tealAccent,
-                child: Column(
-                  children: [
-                    Text(
-                      carta3.category,
-                      textAlign: TextAlign.center,
-                    ),
-                    Text(
-                      carta3.question,
-                      textAlign: TextAlign.center,
-                    ),
-                    const SizedBox(
-                      width: 100,
-                      height: 100,
-                      child: CircleAvatar(
-                        backgroundImage: NetworkImage(
-                            "https://storage.googleapis.com/cms-storage-bucket/acb0587990b4e7890b95.png"),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            const Spacer(),
-          ],
-        ),
+          );
+        },
       ),
     );
   }
