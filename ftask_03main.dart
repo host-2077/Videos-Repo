@@ -12,16 +12,16 @@ void main() {
   var questions = [
     Cards(
         category: "Sports",
-        question: "¿What is one of the newest Olympic sports that exist?",
-        answer: "test"),
+        question: "What is one of the newest Olympic sports that exist?",
+        answer: "Skateboarding"),
     Cards(
         category: "Comics",
-        question: "¿Who is a latinamerican DC villain?",
-        answer: "test"),
+        question: "What's the name of a latinamerican DC villain?",
+        answer: "Diablo"),
     Cards(
         category: "Tech",
-        question: "¿What is the best programming langauge to create apps?",
-        answer: "test"),
+        question: "What is the best programming langauge to create apps?",
+        answer: "Flutter"),
   ];
   runApp(MyApp(questions: questions));
 }
