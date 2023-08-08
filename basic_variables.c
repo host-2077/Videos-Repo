@@ -3,8 +3,6 @@
 
 int main() {
 
-// Variables used in other languages. 
-
     int testOfInt = 24;  // %d
     char testOfChar = 'a'; // %c
     char testOfString[] = "What is happening bro?"; // %s
@@ -13,6 +11,7 @@ int main() {
     bool testOfBool = true; 
     
     int testOfVariable = 24;
+    
     printf("This is a test on how you first"
     "declare the position of the variable here: %d"
     "and then you can call it again here: %d"
